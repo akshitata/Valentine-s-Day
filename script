@@ -1,0 +1,43 @@
+document.getElementById('yesBtn').addEventListener('click', function() {
+    alert('Yay! Looking forward to a wonderful Valentine\'s Day!');
+});
+
+document.getElementById('noBtn').addEventListener('click', function() {
+    alert('No worries! Maybe next time.');
+    makeButtonSmaller();
+    createHearts();
+    createKitty();
+    createTeddy();
+});
+
+function makeButtonSmaller() {
+    const noBtn = document.getElementById('noBtn');
+    const currentSize = parseFloat(window.getComputedStyle(noBtn).fontSize);
+    noBtn.style.fontSize = `${currentSize * 0.9}px`;
+}
+
+function createHearts() {
+    const heartsContainer = document.getElementById('hearts-container');
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.style.left = `${Math.random() * 100}%`;
+    heartsContainer.appendChild(heart);
+}
+
+function createKitty() {
+    const kittyContainer = document.getElementById('kitty-container');
+    const kitty = document.createElement('img');
+    kitty.src = 'kitty.png';  // Add your own kitty image URL
+    kitty.className = 'kitty';
+    kitty.style.left = `${Math.random() * 100}%`;
+    kittyContainer.appendChild(kitty);
+}
+
+function createTeddy() {
+    const teddyContainer = document.getElementById('teddy-container');
+    const teddy = document.createElement('img');
+    teddy.src = 'teddy.png';  // Add your own teddy bear image URL
+    teddy.className = 'teddy';
+    teddy.style.left = `${Math.random() * 100}%`;
+    teddyContainer.appendChild(teddy);
+}
